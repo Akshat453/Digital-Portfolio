@@ -7,97 +7,104 @@ const Ethics = () => {
       icon: Globe,
       title: "AI Ethics in Healthcare",
       context: "Global Healthcare Equity",
-      scenario: "Developed an AI diagnostic tool for disease detection in resource-limited settings",
-      ethical_implications: [
-        "Addressed bias in training data that could lead to unequal treatment across demographics",
-        "Considered accessibility issues for non-English speaking populations",
-        "Evaluated potential job displacement of healthcare workers",
-      ],
-      analysis: "Implemented fairness metrics to ensure equal accuracy across all demographic groups. Created multilingual interfaces and designed the system to augment rather than replace human expertise.",
-      reflection: "This experience taught me that technology must be developed with intentional consideration of its impact on vulnerable populations. My responsibility extends beyond code functionality to ensuring equitable access and outcomes.",
+      color: "from-blue-500 to-cyan-500",
+      reflection: "Technology must be developed with intentional consideration of its impact on vulnerable populations. My responsibility extends beyond code functionality to ensuring equitable access and outcomes.",
+      tags: ["Bias Mitigation", "Accessibility", "Fairness Metrics"],
     },
     {
       icon: Shield,
       title: "Data Privacy in Social Platform",
       context: "Digital Privacy Rights",
-      scenario: "Built a student networking platform handling sensitive personal information",
-      ethical_implications: [
-        "Balancing feature utility with user privacy protection",
-        "Transparent data collection and usage policies",
-        "Right to data deletion and portability",
-      ],
-      analysis: "Implemented privacy-by-design principles, end-to-end encryption for sensitive data, and granular privacy controls. Conducted privacy impact assessments and ensured GDPR compliance.",
-      reflection: "I learned that user trust is paramount and privacy is not a feature but a fundamental right. Every design decision must prioritize user agency over business convenience.",
+      color: "from-purple-500 to-pink-500",
+      reflection: "User trust is paramount and privacy is not a feature but a fundamental right. Every design decision must prioritize user agency over business convenience.",
+      tags: ["Privacy-by-Design", "GDPR Compliance", "User Agency"],
     },
     {
       icon: Heart,
       title: "Environmental Impact of Computing",
       context: "Climate Change & Sustainability",
-      scenario: "Optimized cloud infrastructure for a large-scale web application",
-      ethical_implications: [
-        "Carbon footprint of computational resources",
-        "E-waste from hardware upgrades",
-        "Energy efficiency vs. performance tradeoffs",
-      ],
-      analysis: "Chose green cloud providers using renewable energy, optimized algorithms to reduce computational load by 40%, implemented lazy loading and efficient caching strategies.",
-      reflection: "As technologists, we have a responsibility to consider the environmental impact of our solutions. Sustainable computing is not optional—it's an ethical imperative for our generation.",
+      color: "from-green-500 to-emerald-500",
+      reflection: "As technologists, we have a responsibility to consider the environmental impact of our solutions. Sustainable computing is not optional—it's an ethical imperative.",
+      tags: ["Green Cloud", "Code Optimization", "Energy Efficiency"],
     },
   ];
 
   return (
-    <section id="ethics" className="py-20 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Global Awareness & Ethical Considerations
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-          How global issues and ethical dilemmas have shaped my work and decision-making
-        </p>
+    <section id="ethics" className="py-24 px-4 bg-gradient-secondary relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, hsl(210 100% 50%) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
 
-        <div className="space-y-6">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Global Awareness</span>
+            <br />
+            <span className="bg-gradient-accent bg-clip-text text-transparent">& Ethical Considerations</span>
+          </h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            How global issues and ethical dilemmas have shaped my work and decision-making
+          </p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* Ethics Cards */}
+        <div className="grid lg:grid-cols-3 gap-8">
           {considerations.map((item, idx) => (
             <Card
               key={idx}
-              className="p-6 md:p-8 bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow animate-fade-in"
+              className="relative overflow-hidden bg-card hover:shadow-glow-soft transition-all duration-500 hover:-translate-y-2 group"
               style={{ animationDelay: `${idx * 0.15}s` }}
             >
-              <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-gradient-primary rounded-lg flex-shrink-0">
-                  <item.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="text-primary text-2xl mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">Context: {item.context}</p>
-                </div>
-              </div>
-
-              <div className="space-y-5 text-muted-foreground">
-                <div>
-                  <h4 className="text-foreground font-semibold mb-2">Case Study</h4>
-                  <p>{item.scenario}</p>
+              {/* Top Gradient Bar */}
+              <div className={`h-2 bg-gradient-to-r ${item.color}`}></div>
+              
+              {/* Icon Circle */}
+              <div className="p-8">
+                <div className={`w-20 h-20 mb-6 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500`}>
+                  <item.icon className="w-10 h-10 text-white" />
                 </div>
 
-                <div>
-                  <h4 className="text-foreground font-semibold mb-2">Ethical Implications</h4>
-                  <ul className="list-disc list-inside space-y-1">
-                    {item.ethical_implications.map((impl, i) => (
-                      <li key={i}>{impl}</li>
-                    ))}
-                  </ul>
+                {/* Title & Context */}
+                <h3 className="text-2xl font-bold text-card-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6 italic">Context: {item.context}</p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {item.tags.map((tag, tagIdx) => (
+                    <span key={tagIdx} className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/30">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
 
-                <div>
-                  <h4 className="text-foreground font-semibold mb-2">Analysis & Actions Taken</h4>
-                  <p>{item.analysis}</p>
-                </div>
-
-                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
-                  <h4 className="text-primary font-semibold mb-2">Personal Reflection</h4>
-                  <p className="text-sm">{item.reflection}</p>
+                {/* Reflection Quote */}
+                <div className="relative p-6 bg-gradient-to-br from-primary/5 to-transparent rounded-xl border-l-4 border-primary">
+                  <div className="absolute top-4 left-4 text-6xl text-primary/10 font-serif">"</div>
+                  <p className="relative text-sm text-card-foreground leading-relaxed italic">
+                    {item.reflection}
+                  </p>
                 </div>
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Bottom Statement */}
+        <div className="mt-16">
+          <Card className="p-10 bg-card text-center border-2 border-border hover:border-primary transition-colors">
+            <h3 className="text-2xl font-bold text-card-foreground mb-4">Ethical Commitment</h3>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              I am committed to developing technology that not only solves problems but does so in a way that 
+              respects human dignity, promotes equity, and contributes positively to society and our planet. 
+              Every line of code carries a responsibility to the broader community it will impact.
+            </p>
+          </Card>
         </div>
       </div>
     </section>

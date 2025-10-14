@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Code, Brain, Users, Palette } from "lucide-react";
+import { Code, Brain, Users, Palette, Zap } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -8,21 +8,9 @@ const Skills = () => {
       title: "Technical Proficiencies",
       color: "from-blue-500 to-cyan-500",
       skills: [
-        {
-          name: "Full-Stack Development",
-          description: "Expert in MERN stack, building scalable web applications",
-          artifacts: "Portfolio includes 10+ production-ready applications",
-        },
-        {
-          name: "Machine Learning & AI",
-          description: "Proficient in TensorFlow, PyTorch, scikit-learn",
-          artifacts: "Implemented 5+ ML models with 85%+ accuracy rates",
-        },
-        {
-          name: "Cloud & DevOps",
-          description: "AWS, Docker, Kubernetes, CI/CD pipelines",
-          artifacts: "Managed deployments serving 10K+ users",
-        },
+        { name: "Full-Stack Development", level: 90 },
+        { name: "Machine Learning & AI", level: 85 },
+        { name: "Cloud & DevOps", level: 80 },
       ],
     },
     {
@@ -30,16 +18,9 @@ const Skills = () => {
       title: "Analytical Skills",
       color: "from-purple-500 to-pink-500",
       skills: [
-        {
-          name: "Data Analysis",
-          description: "Advanced skills in Python, R, SQL for data manipulation",
-          artifacts: "Analyzed datasets with 1M+ records, created 20+ dashboards",
-        },
-        {
-          name: "Problem Solving",
-          description: "Systematic approach to complex technical challenges",
-          artifacts: "Solved 500+ algorithmic problems on competitive platforms",
-        },
+        { name: "Data Analysis", level: 88 },
+        { name: "Problem Solving", level: 92 },
+        { name: "Research & Innovation", level: 85 },
       ],
     },
     {
@@ -47,16 +28,9 @@ const Skills = () => {
       title: "Leadership & Communication",
       color: "from-green-500 to-emerald-500",
       skills: [
-        {
-          name: "Team Leadership",
-          description: "Led cross-functional teams in multiple projects",
-          artifacts: "Managed teams of 5-10 members, delivered 95% projects on time",
-        },
-        {
-          name: "Technical Communication",
-          description: "Ability to explain complex concepts to diverse audiences",
-          artifacts: "Conducted 15+ technical workshops, mentored 20+ students",
-        },
+        { name: "Team Leadership", level: 87 },
+        { name: "Technical Communication", level: 90 },
+        { name: "Project Management", level: 83 },
       ],
     },
     {
@@ -64,53 +38,94 @@ const Skills = () => {
       title: "Creative Competencies",
       color: "from-orange-500 to-red-500",
       skills: [
-        {
-          name: "UI/UX Design",
-          description: "User-centered design thinking and prototyping",
-          artifacts: "Designed 8+ user interfaces with 90%+ satisfaction scores",
-        },
-        {
-          name: "Design Thinking",
-          description: "Innovative problem-solving through creative methodologies",
-          artifacts: "Applied design sprints to 3+ major projects",
-        },
+        { name: "UI/UX Design", level: 82 },
+        { name: "Design Thinking", level: 85 },
+        { name: "Creative Problem Solving", level: 88 },
       ],
     },
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Advanced Skill Development & Mastery
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Comprehensive skill set spanning technical proficiencies, analytical capabilities, leadership qualities, and creative competencies
-        </p>
+    <section id="skills" className="py-24 px-4 bg-gradient-secondary relative overflow-hidden">
+      {/* Animated Background Grid */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(hsl(210 100% 50% / 0.1) 1px, transparent 1px), 
+                           linear-gradient(90deg, hsl(210 100% 50% / 0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Advanced</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent"> Skill Development</span>
+          </h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            Comprehensive skill set spanning technical proficiencies, analytical capabilities, and leadership qualities
+          </p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, idx) => (
             <Card
               key={idx}
-              className="p-6 bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow animate-fade-in"
+              className="relative overflow-hidden bg-card-dark border-border-dark hover:shadow-glow-soft transition-all duration-500 group"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`p-3 bg-gradient-to-r ${category.color} rounded-lg`}>
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-primary text-xl">{category.title}</h3>
-              </div>
-
-              <div className="space-y-5">
-                {category.skills.map((skill, skillIdx) => (
-                  <div key={skillIdx} className="border-l-2 border-primary/30 pl-4">
-                    <h4 className="font-semibold text-foreground mb-1">{skill.name}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{skill.description}</p>
-                    <p className="text-xs text-primary">{skill.artifacts}</p>
+              {/* Gradient Accent */}
+              <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${category.color} opacity-10 group-hover:opacity-20 transition-opacity rounded-bl-full`}></div>
+              
+              <div className="relative p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`p-4 bg-gradient-to-br ${category.color} rounded-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+                    <category.icon className="w-8 h-8 text-white" />
                   </div>
-                ))}
+                  <h3 className="text-2xl font-bold text-card-dark-foreground">{category.title}</h3>
+                </div>
+
+                {/* Skills with Progress Bars */}
+                <div className="space-y-6">
+                  {category.skills.map((skill, skillIdx) => (
+                    <div key={skillIdx}>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm font-semibold text-card-dark-foreground">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                        <div 
+                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
+                          style={{ 
+                            width: `${skill.level}%`,
+                            animationDelay: `${(idx * 3 + skillIdx) * 0.1}s`
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
+            </Card>
+          ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { icon: Code, value: "500+", label: "Problems Solved" },
+            { icon: Zap, value: "10+", label: "Projects Completed" },
+            { icon: Users, value: "20+", label: "Students Mentored" },
+            { icon: Brain, value: "5+", label: "ML Models Built" },
+          ].map((stat, idx) => (
+            <Card key={idx} className="p-6 bg-card text-center hover:shadow-glow-soft transition-all duration-300 hover:-translate-y-2">
+              <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+              <p className="text-3xl font-bold text-card-foreground mb-1">{stat.value}</p>
+              <p className="text-sm text-muted-foreground">{stat.label}</p>
             </Card>
           ))}
         </div>

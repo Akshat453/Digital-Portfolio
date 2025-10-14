@@ -1,97 +1,146 @@
 import { Card } from "@/components/ui/card";
-import { Rocket, BookOpen, Target, TrendingUp } from "lucide-react";
+import { Rocket, BookOpen, Target, TrendingUp, Sparkles } from "lucide-react";
 
 const Future = () => {
-  const aspirations = [
-    {
-      icon: Target,
-      title: "Short-term Goals (1-2 years)",
-      items: [
-        "Secure a position as a Software Engineer at a leading tech company",
-        "Contribute to open-source projects in AI/ML domain",
-        "Complete advanced certifications in Cloud Architecture and Machine Learning",
-        "Publish research paper on AI ethics in a peer-reviewed journal",
-      ],
-    },
-    {
-      icon: Rocket,
-      title: "Long-term Career Vision (5-10 years)",
-      items: [
-        "Become a technical lead or architect designing scalable systems",
-        "Launch a tech startup addressing real-world problems in healthcare or education",
-        "Mentor the next generation of developers through teaching and workshops",
-        "Establish myself as a thought leader in ethical AI development",
-      ],
-    },
-    {
-      icon: BookOpen,
-      title: "Areas for Further Study",
-      items: [
-        "Advanced Machine Learning and Deep Learning specialization",
-        "Quantum Computing fundamentals and applications",
-        "Blockchain technology and decentralized systems",
-        "Human-Computer Interaction and UX research methodologies",
-      ],
-    },
-    {
-      icon: TrendingUp,
-      title: "Continuous Improvement Strategies",
-      items: [
-        "Participate in competitive programming and hackathons regularly",
-        "Read 2 technical books per month and document key learnings",
-        "Build side projects experimenting with emerging technologies",
-        "Network with industry professionals through conferences and meetups",
-        "Maintain a technical blog sharing insights and lessons learned",
-      ],
-    },
-  ];
-
   return (
-    <section id="future" className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Future Aspirations & Professional Development
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Outlining career goals, areas for growth, and commitment to lifelong learning
-        </p>
+    <section id="future" className="py-24 px-4 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl"></div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {aspirations.map((section, idx) => (
-            <Card
-              key={idx}
-              className="p-6 bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow animate-fade-in"
-              style={{ animationDelay: `${idx * 0.1}s` }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-primary rounded-lg">
-                  <section.icon className="w-6 h-6 text-primary-foreground" />
+      <div className="container mx-auto max-w-7xl relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-card-foreground">Future</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent"> Aspirations</span>
+          </h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            Career goals, areas for growth, and commitment to lifelong learning
+          </p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* Main Goals Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Short-term Goals */}
+          <Card className="relative overflow-hidden bg-gradient-primary text-white border-0 hover:shadow-glow transition-all duration-500">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-bl-full"></div>
+            <div className="relative p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 bg-white/20 rounded-2xl backdrop-blur-sm">
+                  <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-primary text-xl">{section.title}</h3>
+                <h3 className="text-2xl font-bold">Short-term Goals</h3>
               </div>
-
-              <ul className="space-y-3">
-                {section.items.map((item, itemIdx) => (
-                  <li key={itemIdx} className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-muted-foreground">{item}</span>
+              <p className="text-sm text-white/80 mb-6">Next 1-2 Years</p>
+              <ul className="space-y-4">
+                {[
+                  "Secure Software Engineer role at leading tech company",
+                  "Contribute to open-source AI/ML projects",
+                  "Complete Cloud Architecture certifications",
+                  "Publish research on AI ethics",
+                ].map((goal, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                    <span>{goal}</span>
                   </li>
                 ))}
               </ul>
-            </Card>
-          ))}
-        </div>
+            </div>
+          </Card>
 
-        <div className="mt-8">
-          <Card className="p-8 bg-gradient-primary text-primary-foreground border-0">
-            <h3 className="text-2xl font-bold mb-4 text-center">My Commitment</h3>
-            <p className="text-center leading-relaxed">
-              I am committed to continuous growth, staying curious, and using technology as a force for positive 
-              change. My journey is not just about building a career, but about making meaningful contributions 
-              to society while staying true to my values of innovation, ethics, and excellence.
-            </p>
+          {/* Long-term Vision */}
+          <Card className="relative overflow-hidden bg-card-dark text-card-dark-foreground border-2 border-border-dark hover:shadow-glow-soft transition-all duration-500">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-bl-full"></div>
+            <div className="relative p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 bg-gradient-primary rounded-2xl">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold">Long-term Vision</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">Next 5-10 Years</p>
+              <ul className="space-y-4 text-muted-foreground">
+                {[
+                  "Technical lead designing scalable systems",
+                  "Launch tech startup in healthcare/education",
+                  "Mentor next generation of developers",
+                  "Thought leader in ethical AI development",
+                ].map((goal, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>{goal}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Card>
         </div>
+
+        {/* Learning & Growth */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Further Study */}
+          <Card className="p-8 border-2 hover:border-primary hover:shadow-glow-soft transition-all duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-card-foreground">Areas for Further Study</h3>
+            </div>
+            <div className="space-y-3">
+              {[
+                "Advanced Machine Learning & Deep Learning",
+                "Quantum Computing Fundamentals",
+                "Blockchain & Decentralized Systems",
+                "Human-Computer Interaction Research",
+              ].map((area, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                  <span className="text-sm text-muted-foreground">{area}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          {/* Improvement Strategies */}
+          <Card className="p-8 border-2 hover:border-primary hover:shadow-glow-soft transition-all duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-card-foreground">Continuous Improvement</h3>
+            </div>
+            <div className="space-y-3">
+              {[
+                "Regular hackathons & competitive programming",
+                "2 technical books per month + documentation",
+                "Side projects with emerging technologies",
+                "Industry networking & conferences",
+                "Technical blogging & knowledge sharing",
+              ].map((strategy, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 bg-green-50 border border-green-100 rounded-lg">
+                  <span className="text-green-600 font-bold">→</span>
+                  <span className="text-sm text-card-foreground">{strategy}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+
+        {/* Commitment Banner */}
+        <Card className="relative overflow-hidden border-0">
+          <div className="absolute inset-0 bg-gradient-accent"></div>
+          <div className="relative p-12 text-center text-white">
+            <Sparkles className="w-12 h-12 mx-auto mb-6 animate-pulse" />
+            <h3 className="text-3xl font-bold mb-4">My Commitment</h3>
+            <p className="text-lg max-w-3xl mx-auto leading-relaxed">
+              I am committed to continuous growth, staying curious, and using technology as a force for positive 
+              change. My journey is about making meaningful contributions to society while staying true to my 
+              values of innovation, ethics, and excellence.
+            </p>
+          </div>
+        </Card>
       </div>
     </section>
   );
