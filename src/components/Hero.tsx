@@ -66,11 +66,14 @@ const Hero = () => {
               <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/20 rounded-3xl -z-10"></div>
               
               {/* Main Avatar Circle */}
-              <div className="relative aspect-square rounded-3xl bg-gradient-primary p-2 shadow-glow">
-                <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center overflow-hidden">
-                  <User className="w-48 h-48 text-primary" />
-                </div>
+              <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center overflow-hidden">
+                <img
+                  src="/my-photo-3.jpg"
+                  alt="Akshat Singh"
+                  className="object-cover w-full h-full rounded-3xl transition-transform duration-500 hover:scale-105"
+                />
               </div>
+
 
               {/* Floating Stats Cards */}
               <div className="absolute -left-8 top-1/4 bg-card rounded-2xl shadow-glow-soft p-4 border border-border animate-float">

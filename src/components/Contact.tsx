@@ -7,7 +7,7 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "akshat.singh11123@gmail.com",
-      href: "mailto:shriya.malik@icloud.com",
+      href: "mailto:akshat.singh11123@gmail.com",
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -23,22 +23,22 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/shriya-malik",
-      href: "https://linkedin.com/in/shriya-malik",
+      value: "linkedin.com/in/akshat-singh-ab1a1938a",
+      href: "https://linkedin.com/in/akshat-singh-ab1a1938a",
       color: "hover:bg-[#0077b5]",
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/shriya-malik",
-      href: "https://github.com/shriya-malik",
+      value: "github.com/Akshat453",
+      href: "https://github.com/Akshat453",
       color: "hover:bg-[#333]",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      value: "@shriya.codes",
-      href: "https://instagram.com/shriya.codes",
+      value: "@techwithakshat",
+      href: "https://www.instagram.com/techwithakshat?igsh=NmVpM2hvZDF1NDRy&utm_source=qr",
       color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500",
     },
   ];

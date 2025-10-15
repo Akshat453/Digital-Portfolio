@@ -12,11 +12,12 @@ const Footer = () => {
           {/* Left - Brand */}
           <div>
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3">
-              Your Name
+              Akshat Singh
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Computer Science Student passionate about building innovative solutions 
-              and making a positive impact through technology.
+              Software Engineer at Apple • Tech Speaker • Georgia Tech Alum
+              Passionate about creating ethical, intelligent, and scalable technology that empowers people
+              and inspires innovation across the globe.
             </p>
           </div>
 
@@ -40,7 +41,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Let's Connect</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              Always open to discussing new opportunities and collaborations
+              Always open to collaborations, speaking engagements, and meaningful tech conversations.
             </p>
             <a
               href="#contact"
@@ -54,9 +55,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground flex items-center gap-2">
-            © {new Date().getFullYear()} Your Name. Made with 
-            <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" /> 
+            © {new Date().getFullYear()} Akshat Singh. Made with
+            <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
             and <Code className="w-4 h-4 text-primary" />
+            in Cupertino 🌍
           </p>
           <p className="text-sm text-muted-foreground">
             Built with React, TypeScript & Tailwind CSS
