@@ -5,44 +5,53 @@ const Projects = () => {
   const projects = [
     {
       icon: Code2,
-      title: "AI-Powered Recommendation System",
-      category: "Machine Learning • Python • TensorFlow",
-      overview: "Developed a collaborative filtering recommendation system for e-commerce platform",
+      title: "FinSecure – Insider Threat Detection System",
+      category: "Machine Learning • Cybersecurity • FastAPI • Python",
+      overview:
+        "Developed an AI-powered insider threat detection system that analyzes employee behavior and transaction logs in real time to identify anomalies and prevent data breaches.",
       methodology: [
-        "Implemented deep learning models using TensorFlow",
-        "Applied data preprocessing and feature engineering",
-        "Optimized through hyperparameter tuning",
+        "Implemented Isolation Forest and One-Class SVM models for anomaly detection.",
+        "Built FastAPI-based backend for real-time event ingestion and scoring.",
+        "Extracted behavioral metrics like login entropy, CPU/memory z-scores, and access frequency.",
       ],
-      outcomes: "85% accuracy, 40% increase in user engagement",
-      challenges: "Resolved sparse data matrices and cold-start problems",
+      outcomes:
+        "Achieved 92% detection accuracy with near-zero false positives; deployed secure FastAPI microservice for enterprise monitoring.",
+      challenges:
+        "Ensured system scalability for high-velocity log streams while maintaining strict data privacy.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Rocket,
-      title: "Real-Time Collaboration Platform",
-      category: "Web Development • React • WebSockets",
-      overview: "Built a real-time collaborative document editing platform for teams",
+      title: "Smart Vehicle Monitoring Dashboard",
+      category: "IoT • Web Development • React • Node.js",
+      overview:
+        "Built an IoT-based vehicle tracking and safety system integrating sensor data for proximity management, pothole detection, and driver behavior monitoring with a real-time web dashboard.",
       methodology: [
-        "Designed scalable architecture with React and Node.js",
-        "Implemented WebSocket-based real-time sync",
-        "Created conflict resolution algorithms",
+        "Connected OBD-II data and ultrasonic sensors to Node.js backend via MQTT.",
+        "Developed interactive React dashboard for live map visualization and alerts.",
+        "Implemented real-time analytics for speed violations and environmental conditions.",
       ],
-      outcomes: "500+ users, 99.9% uptime, sub-100ms latency",
-      challenges: "Solved race conditions with operational transformation",
+      outcomes:
+        "Reduced vehicle incidents by 35% in pilot testing; real-time dashboard achieved <120ms update latency.",
+      challenges:
+        "Managed synchronization between multiple sensor data streams using WebSockets and caching layers.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: Database,
-      title: "Smart Healthcare Data Analytics",
-      category: "Data Science • Healthcare • Analytics",
-      overview: "Developed predictive analytics system for patient health monitoring",
+      title: "AI-Powered Resume Screening System",
+      category: "Data Science • NLP • Flask • Recruitment Automation",
+      overview:
+        "Developed an intelligent resume parsing and ranking system leveraging NLP to automate candidate shortlisting for technical roles based on skills, experience, and role fit.",
       methodology: [
-        "Analyzed large-scale healthcare datasets",
-        "Created interactive visualization dashboards",
-        "Implemented predictive models for early detection",
+        "Used BERT embeddings to extract semantic similarity between resumes and job descriptions.",
+        "Created automated keyword extraction and ranking pipeline using Python and Pandas.",
+        "Built Flask-based web interface for HR teams to upload resumes and view ranked candidates.",
       ],
-      outcomes: "90% accuracy in identifying high-risk patients",
-      challenges: "Ensured HIPAA compliance and data privacy",
+      outcomes:
+        "Automated screening process reduced manual effort by 70%; achieved 88% alignment accuracy with human reviewers.",
+      challenges:
+        "Balanced model precision with fairness — addressed gender and keyword bias in candidate scoring.",
       gradient: "from-green-500 to-emerald-500",
     },
   ];
@@ -58,10 +67,14 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-card-foreground">Interdisciplinary</span>
-            <span className="bg-gradient-accent bg-clip-text text-transparent"> Projects & Research</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent">
+              {" "}
+              Projects & Research
+            </span>
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-            Major projects demonstrating integration of multiple disciplines, innovative problem-solving, and real-world impact
+            Major projects demonstrating integration of AI, IoT, cybersecurity,
+            and data-driven systems — blending innovation, scalability, and real-world impact.
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
         </div>
@@ -71,26 +84,31 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <Card
               key={idx}
-              className={`relative overflow-hidden border-2 hover:shadow-glow-soft transition-all duration-500 ${
-                idx % 2 === 0 ? 'animate-slide-in-left' : 'animate-fade-in'
-              }`}
+              className={`relative overflow-hidden border-2 hover:shadow-glow-soft transition-all duration-500 ${idx % 2 === 0 ? "animate-slide-in-left" : "animate-fade-in"
+                }`}
               style={{ animationDelay: `${idx * 0.2}s` }}
             >
               {/* Gradient Background Accent */}
-              <div className={`absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l ${project.gradient} opacity-5`}></div>
-              
+              <div
+                className={`absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l ${project.gradient} opacity-5`}
+              ></div>
+
               <div className="relative p-8 md:p-10">
                 <div className="grid md:grid-cols-12 gap-8 items-start">
                   {/* Left Column - Icon & Title */}
                   <div className="md:col-span-4">
-                    <div className={`inline-flex p-5 bg-gradient-to-br ${project.gradient} rounded-2xl shadow-lg mb-4`}>
+                    <div
+                      className={`inline-flex p-5 bg-gradient-to-br ${project.gradient} rounded-2xl shadow-lg mb-4`}
+                    >
                       <project.icon className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-card-foreground mb-3">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4">{project.category}</p>
-                    
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {project.category}
+                    </p>
+
                     {/* Action Buttons */}
                     <div className="flex gap-3">
                       <button className="p-2 border-2 border-border rounded-lg hover:border-primary transition-colors">
@@ -119,9 +137,16 @@ const Projects = () => {
                       </h4>
                       <div className="grid md:grid-cols-2 gap-3">
                         {project.methodology.map((item, i) => (
-                          <div key={i} className="flex items-start gap-2 bg-primary/5 p-3 rounded-lg">
-                            <span className="text-primary font-bold text-sm mt-0.5">→</span>
-                            <span className="text-sm text-muted-foreground">{item}</span>
+                          <div
+                            key={i}
+                            className="flex items-start gap-2 bg-primary/5 p-3 rounded-lg"
+                          >
+                            <span className="text-primary font-bold text-sm mt-0.5">
+                              →
+                            </span>
+                            <span className="text-sm text-muted-foreground">
+                              {item}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -129,13 +154,21 @@ const Projects = () => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-green-50 border border-green-200 p-4 rounded-xl">
-                        <h4 className="text-sm font-bold text-green-900 mb-2">✓ Outcomes & Impact</h4>
-                        <p className="text-sm text-green-800">{project.outcomes}</p>
+                        <h4 className="text-sm font-bold text-green-900 mb-2">
+                          ✓ Outcomes & Impact
+                        </h4>
+                        <p className="text-sm text-green-800">
+                          {project.outcomes}
+                        </p>
                       </div>
-                      
+
                       <div className="bg-orange-50 border border-orange-200 p-4 rounded-xl">
-                        <h4 className="text-sm font-bold text-orange-900 mb-2">⚡ Challenges Solved</h4>
-                        <p className="text-sm text-orange-800">{project.challenges}</p>
+                        <h4 className="text-sm font-bold text-orange-900 mb-2">
+                          ⚡ Challenges Solved
+                        </h4>
+                        <p className="text-sm text-orange-800">
+                          {project.challenges}
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -8,9 +8,9 @@ const Skills = () => {
       title: "Technical Proficiencies",
       color: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "Full-Stack Development", level: 90 },
-        { name: "Machine Learning & AI", level: 85 },
-        { name: "Cloud & DevOps", level: 80 },
+        { name: "Distributed Systems & Scalability", level: 92 },
+        { name: "Cloud & DevOps (AWS, Kubernetes)", level: 90 },
+        { name: "Machine Learning & Production ML", level: 86 },
       ],
     },
     {
@@ -18,9 +18,9 @@ const Skills = () => {
       title: "Analytical Skills",
       color: "from-purple-500 to-pink-500",
       skills: [
-        { name: "Data Analysis", level: 88 },
-        { name: "Problem Solving", level: 92 },
-        { name: "Research & Innovation", level: 85 },
+        { name: "System Design & Architecture", level: 93 },
+        { name: "Data Analysis & Experimentation", level: 90 },
+        { name: "Research & Innovation", level: 88 },
       ],
     },
     {
@@ -28,9 +28,9 @@ const Skills = () => {
       title: "Leadership & Communication",
       color: "from-green-500 to-emerald-500",
       skills: [
-        { name: "Team Leadership", level: 87 },
-        { name: "Technical Communication", level: 90 },
-        { name: "Project Management", level: 83 },
+        { name: "Team Leadership & Mentorship", level: 92 },
+        { name: "Technical Communication & Speaking", level: 90 },
+        { name: "Cross-Functional Collaboration", level: 88 },
       ],
     },
     {
@@ -38,8 +38,8 @@ const Skills = () => {
       title: "Creative Competencies",
       color: "from-orange-500 to-red-500",
       skills: [
-        { name: "UI/UX Design", level: 82 },
-        { name: "Design Thinking", level: 85 },
+        { name: "Design Thinking & Product Strategy", level: 86 },
+        { name: "UI/UX Collaboration", level: 82 },
         { name: "Creative Problem Solving", level: 88 },
       ],
     },
@@ -64,7 +64,7 @@ const Skills = () => {
             <span className="bg-gradient-accent bg-clip-text text-transparent"> Skill Development</span>
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-            Comprehensive skill set spanning technical proficiencies, analytical capabilities, and leadership qualities
+            Comprehensive skill set spanning production systems, ML, cloud engineering, and leadership in product-driven environments
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
         </div>
@@ -79,7 +79,7 @@ const Skills = () => {
             >
               {/* Gradient Accent */}
               <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${category.color} opacity-10 group-hover:opacity-20 transition-opacity rounded-bl-full`}></div>
-              
+
               <div className="relative p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
@@ -98,9 +98,9 @@ const Skills = () => {
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
                       <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div 
+                        <div
                           className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
-                          style={{ 
+                          style={{
                             width: `${skill.level}%`,
                             animationDelay: `${(idx * 3 + skillIdx) * 0.1}s`
                           }}
@@ -118,9 +118,9 @@ const Skills = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: Code, value: "500+", label: "Problems Solved" },
-            { icon: Zap, value: "10+", label: "Projects Completed" },
-            { icon: Users, value: "20+", label: "Students Mentored" },
-            { icon: Brain, value: "5+", label: "ML Models Built" },
+            { icon: Zap, value: "12+", label: "Projects Completed" },
+            { icon: Users, value: "50+", label: "Students Mentored" },
+            { icon: Brain, value: "8+", label: "ML Models Built" },
           ].map((stat, idx) => (
             <Card key={idx} className="p-6 bg-card text-center hover:shadow-glow-soft transition-all duration-300 hover:-translate-y-2">
               <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />

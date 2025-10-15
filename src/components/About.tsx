@@ -6,19 +6,19 @@ const About = () => {
     {
       icon: BookOpen,
       title: "My Learning Journey",
-      content: "My academic journey has been driven by an insatiable curiosity and a passion for understanding how technology shapes our world. From my early days of coding simple programs to now architecting complex systems, I've embraced every challenge as an opportunity to grow and innovate.",
+      content: "My professional journey has been guided by an endless curiosity about how technology can transform everyday life. From building scalable systems at Zomato to leading innovation at Apple, I’ve always viewed challenges as opportunities to create smarter, more meaningful experiences through technology.",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Target,
       title: "Core Values",
-      content: "I believe in the power of continuous learning, collaborative innovation, and ethical technology development. My approach to problem-solving combines analytical thinking with creative exploration, always keeping the end-user and societal impact at the forefront of my work.",
+      content: "I value innovation grounded in empathy, collaboration, and ethics. My approach blends strategic problem-solving with creative experimentation ensuring technology not only solves problems but also empowers people. I believe true innovation happens at the intersection of purpose and impact.",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Lightbulb,
-      title: "Academic Philosophy",
-      content: "Education, to me, is not just about acquiring knowledge—it's about developing the ability to think critically, adapt quickly, and contribute meaningfully to society. I strive to bridge theoretical concepts with practical applications.",
+      title: "Professional Philosophy",
+      content: "My professional philosophy revolves around lifelong learning, adaptability, and human-centered innovation. I believe technology should enhance lives, not complicate them. Every project I undertake reflects a commitment to excellence, integrity, and purposeful design.",
       color: "from-orange-500 to-red-500",
     },
   ];

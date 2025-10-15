@@ -5,30 +5,30 @@ const Leadership = () => {
   const experiences = [
     {
       icon: Users,
-      title: "Technical Lead - University Hackathon",
-      role: "Team Leader",
-      duration: "March 2024",
+      title: "Team Lead – FinSecure (Insider Threat Detection System)",
+      role: "Project Lead, Apple Inc.",
+      duration: "Jan 2023 – Present",
       color: "from-blue-500 to-cyan-500",
-      achievements: "Won 1st place among 50+ teams",
-      impact: "Led team of 5 developers in 48-hour hackathon",
+      achievements: "Deployed enterprise-wide anomaly detection pipeline",
+      impact: "Leading a cross-functional team of 8 engineers and data scientists to build scalable behavioral analytics systems for enterprise threat prevention.",
     },
     {
       icon: Target,
-      title: "Project Manager - Student Portal",
-      role: "Cross-functional Lead",
-      duration: "Jan - Apr 2024",
+      title: "Product & Engineering Manager – Smart Vehicle Dashboard",
+      role: "Research Collaboration (Georgia Tech)",
+      duration: "Jan 2020 – Dec 2021",
       color: "from-purple-500 to-pink-500",
-      achievements: "Delivered 2 weeks ahead with 95% satisfaction",
-      impact: "Managed portal for 5000+ students",
+      achievements: "Published 2 research papers and presented at IEEE ICMLA",
+      impact: "Managed an interdisciplinary team integrating IoT, web systems, and data pipelines to create real-time safety analytics for smart vehicles.",
     },
     {
       icon: Award,
-      title: "Tech Club President",
-      role: "Organization Leader",
-      duration: "Aug 2023 - Present",
+      title: "Engineering Mentor – Zomato Tech Program",
+      role: "Mentorship Lead",
+      duration: "Mar 2018 – Dec 2019",
       color: "from-green-500 to-emerald-500",
-      achievements: "Increased participation by 150%",
-      impact: "Leading 200+ active members",
+      achievements: "Mentored 20+ interns; improved onboarding speed by 40%",
+      impact: "Guided junior engineers on backend design, API optimization, and scalable microservice deployment practices.",
     },
   ];
 
@@ -46,7 +46,7 @@ const Leadership = () => {
             <span className="text-card-foreground"> & Collaboration</span>
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-            Demonstrating interpersonal skills and ability to work effectively in diverse teams
+            Demonstrating strategic leadership, mentorship, and the ability to drive innovation through collaboration across global teams.
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
         </div>
@@ -60,9 +60,8 @@ const Leadership = () => {
             {experiences.map((exp, idx) => (
               <div
                 key={idx}
-                className={`relative grid md:grid-cols-2 gap-8 items-center ${
-                  idx % 2 === 0 ? '' : 'md:flex-row-reverse'
-                }`}
+                className={`relative grid md:grid-cols-2 gap-8 items-center ${idx % 2 === 0 ? '' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Timeline Dot */}
                 <div className="hidden md:block absolute left-1/2 top-8 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-primary shadow-glow z-10"></div>
@@ -72,7 +71,7 @@ const Leadership = () => {
                   <Card className="relative overflow-hidden hover:shadow-glow-soft transition-all duration-500 border-2 hover:border-primary group">
                     {/* Gradient Accent */}
                     <div className={`absolute top-0 ${idx % 2 === 0 ? 'right-0' : 'left-0'} w-2 h-full bg-gradient-to-b ${exp.color}`}></div>
-                    
+
                     <div className="p-8">
                       {/* Icon & Header */}
                       <div className="flex items-start gap-4 mb-6">
@@ -112,9 +111,9 @@ const Leadership = () => {
           <h3 className="text-2xl font-bold text-center text-card-foreground mb-8">Key Leadership Competencies</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Team Building", desc: "Creating inclusive environments for diverse teams" },
-              { title: "Conflict Resolution", desc: "Finding win-win solutions through active listening" },
-              { title: "Strategic Planning", desc: "Coordinating resources and deliverables effectively" },
+              { title: "Team Empowerment", desc: "Building high-performing, cross-disciplinary teams driven by autonomy and accountability." },
+              { title: "Innovation Leadership", desc: "Encouraging experimentation and continuous learning to foster a culture of creative problem-solving." },
+              { title: "Strategic Vision", desc: "Aligning technical initiatives with business goals to deliver long-term organizational value." },
             ].map((comp, idx) => (
               <Card key={idx} className="p-6 bg-gradient-secondary text-foreground hover:shadow-glow transition-all duration-300 hover:-translate-y-2">
                 <h4 className="text-lg font-bold mb-2">{comp.title}</h4>

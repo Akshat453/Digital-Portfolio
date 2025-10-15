@@ -16,7 +16,7 @@ const Future = () => {
             <span className="bg-gradient-accent bg-clip-text text-transparent"> Aspirations</span>
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-            Career goals, areas for growth, and commitment to lifelong learning
+            My long-term vision as an engineer, innovator, and speaker — shaping technology that is intelligent, secure, and ethical.
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
         </div>
@@ -33,13 +33,13 @@ const Future = () => {
                 </div>
                 <h3 className="text-2xl font-bold">Short-term Goals</h3>
               </div>
-              <p className="text-sm text-white/80 mb-6">Next 1-2 Years</p>
+              <p className="text-sm text-white/80 mb-6">Next 1–2 Years</p>
               <ul className="space-y-4">
                 {[
-                  "Secure Software Engineer role at leading tech company",
-                  "Contribute to open-source AI/ML projects",
-                  "Complete Cloud Architecture certifications",
-                  "Publish research on AI ethics",
+                  "Enhance FinSecure’s AI-powered detection pipeline for global scalability at Apple.",
+                  "Contribute to open-source projects in AI safety and real-time analytics.",
+                  "Deliver technical talks and workshops on Responsible AI and Cloud Security.",
+                  "Earn AWS Solutions Architect and Kubernetes certifications.",
                 ].map((goal, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Sparkles className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -60,13 +60,13 @@ const Future = () => {
                 </div>
                 <h3 className="text-2xl font-bold">Long-term Vision</h3>
               </div>
-              <p className="text-sm text-muted-foreground mb-6">Next 5-10 Years</p>
+              <p className="text-sm text-muted-foreground mb-6">Next 5–10 Years</p>
               <ul className="space-y-4 text-muted-foreground">
                 {[
-                  "Technical lead designing scalable systems",
-                  "Launch tech startup in healthcare/education",
-                  "Mentor next generation of developers",
-                  "Thought leader in ethical AI development",
+                  "Emerge as a technical leader driving innovation in secure and ethical AI systems.",
+                  "Launch a startup focused on intelligent safety solutions for smart cities.",
+                  "Represent India as a global tech speaker promoting sustainable innovation.",
+                  "Mentor the next generation of engineers and researchers in applied AI.",
                 ].map((goal, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -90,10 +90,10 @@ const Future = () => {
             </div>
             <div className="space-y-3">
               {[
-                "Advanced Machine Learning & Deep Learning",
-                "Quantum Computing Fundamentals",
-                "Blockchain & Decentralized Systems",
-                "Human-Computer Interaction Research",
+                "Advanced Reinforcement Learning & Edge AI",
+                "Privacy-Preserving Machine Learning (Differential Privacy)",
+                "Quantum-safe Cryptography and Secure System Design",
+                "Ethical AI Governance and Policy Frameworks",
               ].map((area, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
@@ -113,11 +113,11 @@ const Future = () => {
             </div>
             <div className="space-y-3">
               {[
-                "Regular hackathons & competitive programming",
-                "2 technical books per month + documentation",
-                "Side projects with emerging technologies",
-                "Industry networking & conferences",
-                "Technical blogging & knowledge sharing",
+                "Host and speak at global conferences on AI ethics and cybersecurity.",
+                "Read one technical paper or book chapter every day.",
+                "Collaborate on side projects combining AI with IoT and human-centered design.",
+                "Actively mentor students through open forums and hackathons.",
+                "Write and publish thought pieces on ethical innovation.",
               ].map((strategy, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 bg-green-50 border border-green-100 rounded-lg">
                   <span className="text-green-600 font-bold">→</span>
@@ -135,9 +135,10 @@ const Future = () => {
             <Sparkles className="w-12 h-12 mx-auto mb-6 animate-pulse" />
             <h3 className="text-3xl font-bold mb-4">My Commitment</h3>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-              I am committed to continuous growth, staying curious, and using technology as a force for positive 
-              change. My journey is about making meaningful contributions to society while staying true to my 
-              values of innovation, ethics, and excellence.
+              I am dedicated to advancing technology that safeguards people, empowers organizations,
+              and inspires trust. My mission is to lead with integrity — building AI systems that are
+              transparent, sustainable, and human-centered, while nurturing innovation through mentorship
+              and continuous learning.
             </p>
           </div>
         </Card>

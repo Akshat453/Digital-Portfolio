@@ -31,15 +31,15 @@ const Resume = () => {
           
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-6 bg-card hover:shadow-glow-soft transition-all duration-300 border-l-4 border-primary">
-              <h4 className="text-xl font-bold text-card-foreground mb-2">Bachelor of Technology in Computer Science</h4>
-              <p className="text-muted-foreground mb-2">Your University Name</p>
-              <p className="text-sm text-primary font-semibold">Expected Graduation: 2025 • CGPA: X.XX/10</p>
+              <h4 className="text-xl font-bold text-card-foreground mb-2">Master of Science in Computer Science</h4>
+              <p className="text-muted-foreground mb-2"> Georgia Institute of Technology, Atlanta, USA</p>
+              <p className="text-sm text-primary font-semibold">Jan 2020 – Dec 2021 • Graduated: 2021 • GPA: 3.9/4.0</p>
             </Card>
             
             <Card className="p-6 bg-card hover:shadow-glow-soft transition-all duration-300 border-l-4 border-accent">
-              <h4 className="text-xl font-bold text-card-foreground mb-2">High School</h4>
-              <p className="text-muted-foreground mb-2">Your School Name</p>
-              <p className="text-sm text-primary font-semibold">Percentage: XX% • Year: 2021</p>
+              <h4 className="text-xl font-bold text-card-foreground mb-2">Bachelor of Technology in Computer Science</h4>
+              <p className="text-muted-foreground mb-2">Pandit Deendayal Energy University</p>
+              <p className="text-sm text-primary font-semibold">Jul 2012 – May 2016 • Graduated: 2016 • CGPA: 9.1/10</p>
             </Card>
           </div>
         </div>
@@ -57,18 +57,44 @@ const Resume = () => {
             <Card className="p-6 bg-card hover:shadow-glow-soft transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary opacity-10 rounded-bl-full group-hover:opacity-20 transition-opacity"></div>
               <div className="relative">
-                <h4 className="text-xl font-bold text-card-foreground mb-2">Software Development Intern</h4>
-                <p className="text-muted-foreground mb-2">Company Name • Summer 2024</p>
-                <p className="text-sm text-card-foreground">Developed web applications using React and Node.js, collaborated with cross-functional teams.</p>
+                <h4 className="text-xl font-bold text-card-foreground mb-2">Software Engineer — Apple Inc.</h4>
+                <p className="text-muted-foreground mb-2">Cupertino, CA • Jan 2022 – Present</p>
+                <ul className="list-disc list-inside space-y-2 text-sm text-card-foreground">
+                  <li>Leading development of scalable backend services for Apple Pay and Wallet.</li>
+                  <li>Architected internal APIs improving transaction speed and reliability by 40%.</li>
+                  <li>Collaborated with cross-functional teams to design secure, privacy-focused user systems.</li>
+                  <li>Delivered keynote sessions on system optimization and innovation culture within Apple.</li>
+                </ul>
               </div>
             </Card>
             
             <Card className="p-6 bg-card hover:shadow-glow-soft transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 opacity-10 rounded-bl-full group-hover:opacity-20 transition-opacity"></div>
               <div className="relative">
-                <h4 className="text-xl font-bold text-card-foreground mb-2">Research Assistant</h4>
-                <p className="text-muted-foreground mb-2">University Research Lab • Jan 2024 - Present</p>
-                <p className="text-sm text-card-foreground">Working on AI/ML projects, conducting experiments, and analyzing results.</p>
+                <h4 className="text-xl font-bold text-card-foreground mb-2">Backend Developer — Zomato</h4>
+                <p className="text-muted-foreground mb-2">Gurgaon, India • Mar 2017 – Dec 2019
+</p>
+                <ul className="list-disc list-inside space-y-2 text-sm text-card-foreground">
+                  <li>Built and optimized microservices powering real-time order tracking and restaurant analytics.</li>
+                  <li>Improved backend efficiency by reducing API latency by 25% and increasing data throughput.</li>
+                  <li>Partnered with product teams to deploy new restaurant analytics features.</li>
+                  <li>Mentored new engineers on clean architecture and backend best practices.</li>
+                </ul>
+              </div>
+            </Card>
+
+            {/* 🆕 New Card 3 */}
+            <Card className="p-6 bg-card hover:shadow-glow-soft transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-indigo-500 to-sky-500 opacity-10 rounded-bl-full group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative">
+                <h4 className="text-xl font-bold text-card-foreground mb-2">Software Developer — Scaler</h4>
+                <p className="text-muted-foreground mb-2">Bangalore, India • Jan 2016 – Feb 2017</p>
+                <ul className="list-disc list-inside space-y-2 text-sm text-card-foreground">
+                  <li>Developed full-stack web applications using React, Node.js, and MongoDB.</li>
+                  <li>Built internal dashboards for instructor performance and learner analytics.</li>
+                  <li>Automated assessment grading system, improving operational efficiency by 30%.</li>
+                  <li>Collaborated with content and product teams to integrate interactive learning modules.</li>
+                </ul>
               </div>
             </Card>
           </div>
@@ -85,9 +111,9 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-card-foreground">Technical Skills</h4>
             </div>
             <div className="space-y-2">
-              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Languages:</span> Python, JavaScript, Java, C++</p>
-              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Frameworks:</span> React, Node.js, Django</p>
-              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Tools:</span> Git, Docker, AWS</p>
+              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Languages:</span> Python, JavaScript (TypeScript), Java, C++</p>
+              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Frameworks:</span> React, Node.js, FastAPI, Django</p>
+              <p className="text-sm text-muted-foreground"><span className="font-semibold text-card-foreground">Cloud & Tools:</span> AWS, Docker, Kubernetes, Git, CI/CD (GitHub Actions)</p>
             </div>
           </Card>
 
@@ -100,7 +126,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-card-foreground">Soft Skills</h4>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Leadership', 'Communication', 'Problem Solving', 'Team Work', 'Time Management'].map((skill) => (
+              {['Leadership', 'Public Speaking', 'Cross-Functional Collaboration', 'Strategic Thinking', 'Mentorship', 'Innovation'].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/30">
                   {skill}
                 </span>
@@ -119,11 +145,19 @@ const Resume = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>AWS Certified Cloud Practitioner</span>
+                <span><strong>AWS Certified Cloud Practitioner</strong> — Amazon Web Services (2023)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>First Prize - Hackathon 2024</span>
+                <span><strong>Certified Kubernetes Administrator (CKA)</strong> — Linux Foundation (2024)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span><strong>First Prize — Global Hackathon 2024</strong> (AI-Driven Smart Systems)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                <span><strong>Speaker — Web Summit 2023, Lisbon</strong> (Topic: Ethical AI in Modern Systems)</span>
               </li>
             </ul>
           </Card>
@@ -137,16 +171,20 @@ const Resume = () => {
               <h4 className="text-xl font-bold">Volunteer Experience</h4>
             </div>
             <ul className="space-y-3 text-white/90">
-              <li>• Teaching coding to underprivileged students</li>
-              <li>• Organizing community tech workshops</li>
+              <li>• Mentoring early-career developers and students through open-source and career workshops.</li>
+              <li>• Conducting global tech talks and community sessions on scalable systems and AI ethics.</li>
+              <li>• Volunteered with non-profits to introduce coding education in underrepresented communities.</li>
+              <li>• Organized Apple Community Tech Drives promoting innovation and STEM learning.</li>
             </ul>
           </Card>
 
           <Card className="p-6 bg-card-dark text-card-dark-foreground border-border-dark hover:shadow-glow-soft transition-all duration-300">
             <h4 className="text-xl font-bold mb-4">Co-Curricular Activities</h4>
             <ul className="space-y-3 text-muted-foreground">
-              <li>• Tech Club President - Leading 200+ members</li>
-              <li>• Competitive Programming - Solved 500+ problems</li>
+              <li>• Tech Speaker at Global Conferences – Delivered sessions on AI Ethics, System Optimization, and Cloud Infrastructure.</li>
+              <li>• Guest Lecturer at Universities – Conducted talks on innovation culture and scalable system design.</li>
+              <li>• Tech Club Mentor – Guiding young engineers in leadership and technology strategy.</li>
+              <li>• Competitive Programmer – Solved 500+ problems and mentored peers in algorithmic thinking.</li>
             </ul>
           </Card>
         </div>

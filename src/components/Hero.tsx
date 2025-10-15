@@ -26,15 +26,15 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="text-foreground">Hi, I'm</span>
               <br />
-              <span className="bg-gradient-accent bg-clip-text text-transparent">Your Name</span>
+              <span className="bg-gradient-accent bg-clip-text text-transparent">Akshat Singh</span>
             </h1>
             
             <div className="space-y-3">
               <p className="text-2xl md:text-3xl text-muted-foreground font-light">
-                Computer Science Student
+                Software Engineer at Apple | Tech Speaker | Innovator
               </p>
               <p className="text-lg text-muted-foreground">
-                Your University • Class of 2025
+                Based in San Francisco | 5+ Years of Experience
               </p>
             </div>
             
