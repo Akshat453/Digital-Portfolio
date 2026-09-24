@@ -2,94 +2,257 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ═══════════════════════════════════════════════════════════════════════════
+   ENGINEERING SIGNALS — Dark-mode design system
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer base {
   :root {
-    /* Modern Dark Blue & White Theme */
-    --background: 220 45% 10%;
-    --foreground: 0 0% 98%;
+    /* Background layers */
+    --background: 220 20% 4%;          /* #090B0F — deepest */
+    --foreground: 220 10% 93%;         /* warm near-white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 45% 15%;
+    --surface: 220 18% 7%;            /* #101318 — primary surface */
+    --surface-elevated: 220 16% 10%;  /* #151920 — cards, elevated */
 
-    --card-dark: 220 40% 12%;
-    --card-dark-foreground: 0 0% 98%;
+    /* Primary accent — refined cyan/teal */
+    --primary: 185 75% 48%;
+    --primary-foreground: 220 20% 4%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 45% 15%;
+    /* Muted */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Accent */
+    --accent: 185 75% 48%;
+    --accent-subtle: 185 60% 20%;
 
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 0 0% 98%;
+    /* Borders */
+    --border: 220 15% 14%;
+    --border-hover: 220 15% 24%;
 
-    --muted: 220 15% 85%;
-    --muted-foreground: 220 20% 40%;
-
-    --accent: 210 100% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 220 20% 85%;
-    --border-dark: 220 30% 20%;
-    --input: 220 20% 90%;
-    --ring: 210 100% 50%;
-
-    --radius: 1rem;
-
-    /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(220 100% 60%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(220 45% 10%) 0%, hsl(220 50% 15%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(210 100% 50%) 0%, hsl(190 100% 50%) 100%);
-    --glow-primary: 0 0 40px hsl(210 100% 50% / 0.4);
-    --glow-soft: 0 10px 40px hsl(210 100% 50% / 0.15);
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 0.75rem;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    border-color: hsl(var(--border));
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
-
-  h1 {
-    @apply text-4xl md:text-6xl;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Remove max-width constraint from Vite */
+  #root {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
   }
 }
+
+/* ─── Reduced motion ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-network,
+  .packet,
+  .scroll-progress {
+    display: none !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Section styling ───────────────────────────────────────────────────── */
+@layer components {
+  .section-number {
+    @apply font-mono text-xs tracking-[0.2em] uppercase;
+    color: hsl(var(--primary));
+    opacity: 0.7;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+    color: hsl(var(--foreground));
+  }
+
+  .section-subtext {
+    @apply text-base md:text-lg max-w-2xl;
+    color: hsl(var(--muted-foreground));
+    line-height: 1.7;
+  }
+
+  .tech-chip {
+    @apply inline-flex items-center px-3 py-1 text-xs font-mono font-medium rounded-md border;
+    background: hsl(var(--accent-subtle));
+    color: hsl(var(--primary));
+    border-color: hsl(var(--primary) / 0.2);
+  }
+
+  .card-base {
+    @apply rounded-xl border p-6 md:p-8 transition-all duration-300;
+    background: hsl(var(--surface));
+    border-color: hsl(var(--border));
+  }
+
+  .card-base:hover {
+    border-color: hsl(var(--border-hover));
+  }
+
+  .card-elevated {
+    @apply rounded-xl border p-6 md:p-8 transition-all duration-300;
+    background: hsl(var(--surface-elevated));
+    border-color: hsl(var(--border));
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-lg border transition-all duration-200;
+    border-color: hsl(var(--border-hover));
+    color: hsl(var(--foreground));
+  }
+
+  .btn-outline:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    transform: translateY(-1px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(190 90% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .link-hover {
+    @apply relative;
+  }
+
+  .link-hover::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-px w-0 transition-all duration-300;
+    background: hsl(var(--primary));
+  }
+
+  .link-hover:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ─── Dot grid pattern ──────────────────────────────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    hsl(var(--muted-foreground) / 0.08) 1px,
+    transparent 0
+  );
+  background-size: 32px 32px;
+}
+
+/* ─── Scroll progress bar ───────────────────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(190 90% 60%));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ─── Architecture flow ─────────────────────────────────────────────────── */
+.arch-flow {
+  @apply flex items-center gap-1 flex-wrap;
+}
+
+.arch-node {
+  @apply px-2 py-1 text-xs font-mono rounded border;
+  background: hsl(var(--accent-subtle));
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary) / 0.15);
+  white-space: nowrap;
+}
+
+.arch-arrow {
+  color: hsl(var(--primary) / 0.4);
+  font-size: 0.75rem;
+}
+
+/* ─── Focus states ──────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Animations ────────────────────────────────────────────────────────── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > .animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+.stagger > .animate-on-scroll:nth-child(2) { transition-delay: 80ms; }
+.stagger > .animate-on-scroll:nth-child(3) { transition-delay: 160ms; }
+.stagger > .animate-on-scroll:nth-child(4) { transition-delay: 240ms; }
+.stagger > .animate-on-scroll:nth-child(5) { transition-delay: 320ms; }
+.stagger > .animate-on-scroll:nth-child(6) { transition-delay: 400ms; }
+.stagger > .animate-on-scroll:nth-child(7) { transition-delay: 480ms; }
