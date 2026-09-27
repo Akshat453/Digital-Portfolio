@@ -125,7 +125,7 @@ export const achievements = [
 // ─── Leadership ──────────────────────────────────────────────────────────────
 export const leadership = {
   role: "Public Relations Core",
-  organization: "Anirveda Techno-Economics Club",
+  organization: "Anirveda Techno-Economics Club,PDEU",
   description:
     "Worked on public relations, outreach, partnerships, and event promotion as part of Anirveda Techno-Economics Club, collaborating across teams to support the club's events and community initiatives.",
 };
